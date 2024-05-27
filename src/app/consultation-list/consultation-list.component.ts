@@ -2,6 +2,7 @@ import { Component, OnInit,EventEmitter,Input,Output, } from '@angular/core';
 import { ConsultationService } from '../consultation.service';
 import { Consultation } from '../consultation.model';
 import { LocalStorageService } from '../local-storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-consultation-list',
@@ -27,5 +28,12 @@ export class ConsultationListComponent implements OnInit {
   }
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
+  }
+  showAlert() {
+    Swal.fire({
+      title: 'Titre de l\'alerte',
+      text: 'Message de l\'alerte',
+      icon: 'info'
+    });
   }
 }

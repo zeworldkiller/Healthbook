@@ -13,7 +13,7 @@ export class LoginComponent {
   signIn(username: string, password: string) {
     if (username === 'jeff' && password === 'jeff') {
       console.log('Connexion réussie !');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/appointment']);
       this.showSuccessAlert();
     } else {
       console.log('Nom d\'utilisateur ou mot de passe incorrect.');

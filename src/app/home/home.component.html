@@ -10,8 +10,8 @@
 <!-- Header Start -->
 <header class="app-header">
   <nav class="navbar navbar-expand-lg navbar-light">
-    <button>
-    <span class="ti ti-menu-2" (click)="toggleSidebar()"></span>
+    <button (click)="toggleSidebar()">
+      <span class="material-icons">menu</span>
     <ul class="navbar-nav">
       <li class="nav-item d-block d-xl-none">
         <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
@@ -71,7 +71,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" routerLink="/add-consultation" aria-expanded="false"routerLinkActive="active-menu">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="material-icons">create</i>
                 </span>
                 <span class="hide-menu">Ajouter une consultation</span>
               </a>
@@ -79,7 +79,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" routerLink="/appointment" aria-expanded="false" routerLinkActive="active-menu">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="material-icons">event</i>
                 </span>
                 <span class="hide-menu">Consultations</span>
               </a>
@@ -87,7 +87,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" routerLink="/profil" aria-expanded="false"routerLinkActive="active-menu">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="material-icons">person</i>
                 </span>
                 <span class="hide-menu">Profil</span>
               </a>
@@ -95,7 +95,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" routerLink="/health-journal" aria-expanded="false"routerLinkActive="active-menu">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="material-icons">description</i>
                 </span>
                 <span class="hide-menu">Journal de santé</span>
               </a>
@@ -103,7 +103,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" (click)="showAlert()" aria-expanded="false">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="material-icons">exit_to_app</i>
                 </span>
                 <span class="hide-menu">Déconnexion</span>
               </a>
@@ -117,4 +117,8 @@
 <!-- Sidebar End -->
     <div class="body-wrapper">
     </div>
+
+    <footer class="footer_section">
+
+    </footer>
 </html>

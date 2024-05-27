@@ -11,6 +11,7 @@ import { ConsultationListComponent } from './consultation-list/consultation-list
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: 'home',component: HomeComponent},
   {path: 'login',component: LoginComponent},
   {path: 'appointment',component: AppointmentComponent},
