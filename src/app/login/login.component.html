@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slide Navbar</title>
+  <link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+      <form (ngSubmit)="signIn(username.value, password.value)">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="text" #username placeholder="Nom d'utilisateur" required>
+        <input type="password" #password placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+      </form>
+  </div>
+    <div class="login">
+      <form>
+        <label for="chk" aria-hidden="true">S'inscrire</label>
+        <input type="text" #username placeholder="Nom d'utilisateur" required>
+        <input type="email" #email placeholder="Email" required>
+        <input type="tel" #telephone placeholder="Numéro de téléphone" required>
+        <input type="password" #password placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+  
+</body>
+</html>

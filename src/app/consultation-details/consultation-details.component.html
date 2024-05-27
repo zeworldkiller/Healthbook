@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MonCarnet</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <!-- Header Start -->
+  <header class="app-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button>
+        <span class="ti ti-menu-2" (click)="toggleSidebar()"></span>
+        <ul class="navbar-nav">
+          <li class="nav-item d-block d-xl-none">
+            <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+              <i class="ti ti-menu-2"></i>
+            </a>
+          </li>
+          <li class="nav-item"></li>
+        </ul>
+      </button>
+      <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+        <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="../assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+              <div class="message-body">
+                <a href="profil" class="d-flex align-items-center gap-2 dropdown-item">
+                  <i class="ti ti-user fs-6"></i>
+                  <p class="mb-0 fs-3">My Profile</p>
+                </a>
+                <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                  <i class="ti ti-mail fs-6"></i>
+                  <p class="mb-0 fs-3">My Account</p>
+                </a>
+                <a href="health-journal" class="d-flex align-items-center gap-2 dropdown-item">
+                  <i class="ti ti-list-check fs-6"></i>
+                  <p class="mb-0 fs-3">Journal</p>
+                </a>
+                <a href="javascript:void(0)" class="btn btn-outline-primary mx-3 mt-2 d-block" (click)="showAlert()">Logout</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Header End -->
+
+  <!-- Main Layout Start -->
+  <div class="main-layout">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar" [ngClass]="{ 'show': isSidebarOpen }">
+      <div class="brand-logo d-flex align-items-center justify-content-between">
+        <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+          <i class="ti ti-x fs-8"></i>
+        </div>
+      </div>
+      <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+        <ul id="sidebarnav">
+          <li class="sidebar-item">
+            <ul class="submenu">
+              <li class="sidebar-item">
+                <a class="sidebar-link" routerLink="/add-consultation" aria-expanded="false" routerLinkActive="active-menu">
+                  <span><i class="ti ti-layout-dashboard"></i></span>
+                  <span class="hide-menu">Ajouter une consultation</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" routerLink="/appointment" aria-expanded="false" routerLinkActive="active-menu">
+                  <span><i class="ti ti-layout-dashboard"></i></span>
+                  <span class="hide-menu">Consultations</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" routerLink="/profil" aria-expanded="false" routerLinkActive="active-menu">
+                  <span><i class="ti ti-layout-dashboard"></i></span>
+                  <span class="hide-menu">Profil</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" routerLink="/health-journal" aria-expanded="false" routerLinkActive="active-menu">
+                  <span><i class="ti ti-layout-dashboard"></i></span>
+                  <span class="hide-menu">Journal de santé</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" (click)="showAlert()" aria-expanded="false">
+                  <span><i class="ti ti-layout-dashboard"></i></span>
+                  <span class="hide-menu">Déconnexion</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- Sidebar End -->
+
+    <!-- Consultation Details Start -->
+    <div class="content-container">
+      <h2>Détails de la consultation</h2>
+      <section class="detail-section">
+        <h3>Constantes</h3>
+        <div class="detail-row">
+          <div class="detail-label">ID :</div>
+          <div class="detail-value">{{ consultation?.id }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Date :</div>
+          <div class="detail-value">{{ consultation?.date | date }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Poids :</div>
+          <div class="detail-value">{{ consultation?.weight }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Taille :</div>
+          <div class="detail-value">{{ consultation?.height }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Tension artérielle :</div>
+          <div class="detail-value">{{ consultation?.bloodPressure }}</div>
+        </div>
+      </section>
+
+      <!-- Section Symptômes -->
+      <section class="detail-section">
+        <h3>Symptômes</h3>
+        <div class="detail-row">
+          <div class="detail-label">Symptômes :</div>
+          <div class="detail-value">{{ consultation?.symptoms }}</div>
+        </div>
+      </section>
+
+      <!-- Section Diagnostic -->
+      <section class="detail-section">
+        <h3>Diagnostic</h3>
+        <div class="detail-row">
+          <div class="detail-label">Traitement :</div>
+          <div class="detail-value">{{ consultation?.treatment }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Analyses à faire :</div>
+          <div class="detail-value">{{ consultation?.testsToPerform }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Médicaments prescrits :</div>
+          <div class="detail-value">{{ consultation?.medicationsPrescribed }}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Nom du médecin :</div>
+          <div class="detail-value">{{ consultation?.doctor }}</div>
+        </div>
+      </section>
+    </div>
+    <!-- Consultation Details End -->
+  </div>
+  <!-- Main Layout End -->
+</body>
+
+</html>

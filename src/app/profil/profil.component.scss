@@ -1,0 +1,142 @@
+/* Styles pour la zone de l'en-tête */
+.hero_area {
+}
+
+.header_section .navbar-brand span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.custom_nav-container .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.custom_nav-container .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+/* Styles pour le formulaire */
+.container form {
+  margin-top: 30px;
+  width: 70%;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles pour la section d'information */
+.info-section {
+  margin-top: 20px;
+}
+
+.info-section .label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.info-section .value {
+  color: #555;
+}
+
+/* Styles pour le pied de page */
+.footer_section {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer_section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  text-decoration: underline;
+}
+
+.footer_social a {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.footer_social a:hover {
+  color: #007bff;
+}
+
+.footer_detail p {
+  color: #aaa;
+}
+
+.footer_link_box .footer_links a {
+  display: block;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.footer_link_box .footer_links a:hover {
+  color: #007bff;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+  .custom_nav-container .navbar-nav {
+      text-align: center;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item {
+      margin-bottom: 10px;
+  }
+
+  .footer_section {
+      text-align: center;
+  }
+}
+.container {
+  margin-left: 280px; /* Ajustez cette valeur selon la largeur de votre barre de navigation */
+  transition: margin-left 0.3s ease; /* Animation pour une transition douce */
+}
+
+/* Style pour le contenu de la page lorsque la barre de navigation est ouverte */
+.container.sidebar-opened {
+  margin-left: 0; /* Déplace le contenu vers la droite pour faire de la place à la barre de navigation */
+}
+.form-control-small {
+  width: 50%; /* Ajustez la largeur selon vos besoins */
+}

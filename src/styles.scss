@@ -1,0 +1,55 @@
+/* Couleurs de fond pour l'en-tête et la barre de navigation */
+.brand-logo,
+.navbar,
+.app-header {
+    background-color: #146D56;
+}
+/* Animation pour l'ouverture et la fermeture de la barre de navigation latérale */
+.left-sidebar {
+    
+    top: 0;
+    left: -280px; /* Barre de navigation cachée par défaut */
+    width: 280px;
+    height: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease; /* Transition douce de la propriété left */
+}
+  
+/* Appliquez la classe "show" pour afficher la barre de navigation */
+.left-sidebar.show {
+    left: 0; /* Affiche la barre de navigation en déplaçant vers la gauche */
+}
+
+/* Animation pour le bouton de fermeture de la barre de navigation sur les petits écrans */
+button.sidebartoggler {
+    transition: transform 0.3s ease; /* Transition douce pour l'icône de fermeture */
+    background-color: transparent; /* Rend le bouton transparent */
+    border: none; /* Supprime les bordures */
+    cursor: pointer; /* Curseur pointer pour indiquer qu'il est cliquable */
+    position: absolute; /* Position absolue pour le placer à un endroit spécifique */
+    top: 15px; /* Position verticale */
+    left: 15px; /* Position horizontale */
+    z-index: 999; /* Assurez-vous qu'il est au-dessus de tout autre contenu */
+}
+
+/* Rotation de l'icône de fermeture lorsqu'elle est activée */
+.sidebartoggler.active {
+    transform: rotate(180deg);
+}
+
+/* Styles pour l'icône du bouton de fermeture */
+button.sidebartoggler i {
+    color: #000000; /* Couleur de l'icône */
+    font-size: 100px; /* Taille de l'icône */
+}
+.active-menu {
+    background-color: #3077b9; /* Couleur de fond pour le menu actif */
+    color: #fff; /* Couleur du texte pour le menu actif */
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.diagnostic-form {
+    margin-top: 20px; /* Ajoutez une marge au-dessus du formulaire */
+  }
+  
