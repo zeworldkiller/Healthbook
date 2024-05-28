@@ -178,10 +178,11 @@
           </div>
           <div class="button-group">
             <button mat-button matStepperPrevious>Précédent</button>
-            <button mat-raised-button color="primary" (click)="addConsultation()">Terminer</button>
+            <button mat-raised-button color="primary" matStepperNext [disabled]="!analysesFormGroup.valid">Suivant</button>
           </div>
         </form>
       </mat-step>
+
 
 
          <!-- Étape 4 : Analyses et soins -->
@@ -195,12 +196,14 @@
                     <mat-error *ngIf="prescriptionFormGroup.get('medicationsPrescribed')">Médicaments prescrits requis</mat-error>
                   </mat-form-field>
                 </div>
+
                 <div class="button-group">
                   <button mat-button matStepperPrevious>Précédent</button>
-                  <button mat-raised-button color="primary" matStepperNext [disabled]="!prescriptionFormGroup.valid">Suivant</button>
+                  <button mat-raised-button color="primary" (click)="addConsultation()">Terminer</button>
                 </div>
               </form>
             </mat-step>
+ 
 
     </mat-horizontal-stepper>
   </div>
